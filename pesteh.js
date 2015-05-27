@@ -75,16 +75,17 @@ var Pesteh = Class.extend({
             edit: this.serverUrl + "pesteh/messages/edit"
         };
         this.token = null;
-        this.getDeviceId();
+        this.getDeviceId(opts.callback);
     },
-    getDeviceId: function () {
+    getDeviceId: function (callback) {
         var self = this;
         $.ajax({
-            async: false,
             url: '/pesteh/register-device/',
             type: 'get'
         }).success(function (response) {
             self.token = response.token;
+            if (callback != undefined)
+                callback();
         }).error(function () {
         });
     },
