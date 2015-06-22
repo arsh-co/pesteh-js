@@ -69,7 +69,7 @@
 var Pesteh = Class.extend({
     init: function (opts) {
         opts = opts || {};
-        this.serverUrl = opts.server || 'http://cloud.arsh.co/';
+        this.serverUrl = opts.server || 'https://cloud.arsh.co/';
         this.urls = {
             history: this.serverUrl + "pesteh/history",
             edit: this.serverUrl + "pesteh/messages/edit"
